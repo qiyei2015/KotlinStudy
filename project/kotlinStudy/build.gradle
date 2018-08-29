@@ -5,12 +5,19 @@ plugins {
 group 'com.qiyei'
 version '1.0.0'
 
+//导出可运行程序
+apply plugin:'application'
+//指定主类
+mainClassName = 'com.qiyei.kotlin.CalculatorKt'
+
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    
 }
 
 compileKotlin {
