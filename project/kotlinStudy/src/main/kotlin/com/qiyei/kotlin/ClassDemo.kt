@@ -52,9 +52,9 @@ class D2:A,B{
     override fun b(c: String) {
         j = c.toInt()
         println("D2 b $j")
+        var fc = ForbiddenCity()
+
     }
-
-
 }
 
 fun main(args: Array<String>) {
@@ -66,4 +66,7 @@ fun main(args: Array<String>) {
     val d2 = D2()
     d2.a()
     d2.b("5")
+
+
 }
+
