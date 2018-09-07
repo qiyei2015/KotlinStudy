@@ -1,0 +1,5 @@
+.svn/
+
+./project/kotlinStudy/.gradle
+./project/kotlinStudy/build
+./project/kotlinStudy/out
