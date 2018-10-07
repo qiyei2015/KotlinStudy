@@ -11,4 +11,10 @@ class User(var name:String,var age:Int){
     init {
         println("${this.javaClass.simpleName} init:$name $age")
     }
+
+    override fun toString(): String {
+        return "User(name='$name', age=$age)"
+    }
+
+
 }
