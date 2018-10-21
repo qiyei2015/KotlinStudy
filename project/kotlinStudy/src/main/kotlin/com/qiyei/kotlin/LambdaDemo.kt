@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
     run{ println(45)}
 
-    val people = listOf(User("张三",14),User("李四",16))
+    val people = listOf(User(1,"张三",14,"男"),User(2,"李四",16,"女"))
     println("年纪最大:" + people.maxBy { it.age })
 
     println("年纪最大:" + people.maxBy ({user:User -> user.age }))

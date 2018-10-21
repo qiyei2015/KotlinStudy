@@ -7,14 +7,13 @@ package com.qiyei.kotlin
  * @description:
  */
 
-class User(var name:String,var age:Int){
+class User(val id:Int,var name:String,var age:Int,val sex:String){
+
     init {
-        println("${this.javaClass.simpleName} init:$name $age")
+        //println(toString())
     }
 
     override fun toString(): String {
-        return "User(name='$name', age=$age)"
+        return "User(id=$id, name='$name', age=$age, sex='$sex')"
     }
-
-
 }
