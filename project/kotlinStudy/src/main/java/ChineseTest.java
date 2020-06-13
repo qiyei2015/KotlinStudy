@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
  * @description:
  */
 public class ChineseTest {
-
+    
     private static final String fileName1 = "不带钟名字.txt";
     private static final String fileName2 = "带钟的名字.txt";
     private static final String fileName3 = "2个字的名字.txt";
@@ -24,24 +26,24 @@ public class ChineseTest {
 
     static List<String> names1 = new ArrayList<>();
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         commonlyUsedChinese = getChineseCharList();
         generateNames();
         System.out.println("名字已经生成完成！！！");
         chooseNames();
     }
 
-    private static void chooseNames(){
+    private static void chooseNames() {
         List<String> chooseNames = new ArrayList<>();
-        for (int i = 0 ;i < names1.size() ;i++){
-            if (i % 910609 == 0){
+        for (int i = 0; i < names1.size(); i++) {
+            if (i % 910609 == 0) {
                 chooseNames.add(names1.get(i));
             }
         }
         System.out.println(chooseNames);
     }
 
-    private static void generateChineseName(){
+    private static void generateChineseName() {
         try {
             File file = new File(fileName1);
             file.delete();
@@ -66,23 +68,23 @@ public class ChineseTest {
             String nice = "钟";
             int k = 0;
             for (int i = s; i <= e; i++) {
-                if (i == '韩'){
+                if (i == '韩') {
                     continue;
                 }
-                for (int j = s ; j <= e; j++){
-                    if (j == '韩'){
+                for (int j = s; j <= e; j++) {
+                    if (j == '韩') {
                         continue;
                     }
                     String str1 = (char) i + "";
                     String str2 = (char) j + "";
                     k++;
                     String name = pre + str1 + str2 + "   ";
-                    if (k % 100 == 0){
+                    if (k % 100 == 0) {
                         name = name + "\n";
                     }
-                    if (str1.equals(nice) || str2.equals(nice)){
+                    if (str1.equals(nice) || str2.equals(nice)) {
                         fw2.write(name);
-                    }else {
+                    } else {
                         fw.write(name);
                     }
                 }
@@ -99,7 +101,7 @@ public class ChineseTest {
     }
 
 
-    private static void generateChineseName2(){
+    private static void generateChineseName2() {
         try {
             File file = new File(fileName3);
             file.delete();
@@ -116,13 +118,13 @@ public class ChineseTest {
             String pre = "韩";
             int k = 0;
             for (int i = s; i <= e; i++) {
-                if (i == '韩'){
+                if (i == '韩') {
                     continue;
                 }
                 String str1 = (char) i + "";
                 k++;
                 String name = pre + str1 + "   ";
-                if (k % 100 == 0){
+                if (k % 100 == 0) {
                     name = name + "\n";
                 }
                 fw.write(name);
@@ -170,10 +172,10 @@ public class ChineseTest {
             String pre = "韩";
             String name;
             int separator_count = 25;
-            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+            for (int i = 0; i < commonlyUsedChinese.size(); i++) {
                 name = pre + commonlyUsedChinese.get(i) + "   ";
                 k++;
-                if (k % separator_count == 0){
+                if (k % separator_count == 0) {
                     name = name + "\n";
                 }
 
@@ -181,12 +183,12 @@ public class ChineseTest {
             }
             separator_count = 20;
 
-            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+            for (int i = 0; i < commonlyUsedChinese.size(); i++) {
                 String str1 = commonlyUsedChinese.get(i);
-                for (int j = 0;j < commonlyUsedChinese.size() ;j++){
+                for (int j = 0; j < commonlyUsedChinese.size(); j++) {
                     name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
                     k++;
-                    if (k % separator_count == 0){
+                    if (k % separator_count == 0) {
                         name = name + "\n";
                     }
                     names1.add(name);
@@ -194,13 +196,13 @@ public class ChineseTest {
                 }
             }
 
-            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+            for (int i = 0; i < commonlyUsedChinese.size(); i++) {
                 String str1 = commonlyUsedChinese.get(i);
-                if (str1.equals("如")){
-                    for (int j = 0;j < commonlyUsedChinese.size() ;j++){
+                if (str1.equals("如")) {
+                    for (int j = 0; j < commonlyUsedChinese.size(); j++) {
                         name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
                         k++;
-                        if (k % separator_count == 0){
+                        if (k % separator_count == 0) {
                             name = name + "\n";
                         }
                         fw3.write(name);
@@ -208,13 +210,13 @@ public class ChineseTest {
                 }
             }
 
-            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+            for (int i = 0; i < commonlyUsedChinese.size(); i++) {
                 String str1 = commonlyUsedChinese.get(i);
-                if (str1.equals("锦")){
-                    for (int j = 0;j < commonlyUsedChinese.size() ;j++){
+                if (str1.equals("锦")) {
+                    for (int j = 0; j < commonlyUsedChinese.size(); j++) {
                         name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
                         k++;
-                        if (k % separator_count == 0){
+                        if (k % separator_count == 0) {
                             name = name + "\n";
                         }
                         fw4.write(name);
@@ -224,7 +226,7 @@ public class ChineseTest {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             //fw.flush();
             //fw.close();
         }
@@ -234,6 +236,7 @@ public class ChineseTest {
 
     /**
      * 生成常用汉字
+     *
      * @return
      * @throws IOException
      */
