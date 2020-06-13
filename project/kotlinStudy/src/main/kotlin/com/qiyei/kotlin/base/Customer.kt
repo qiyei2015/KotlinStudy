@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/8/22.
@@ -6,4 +6,7 @@ package com.qiyei.kotlin
  * @email: 1273482124@qq.com
  * @description:
  */
-class User1
+
+class Customer public @SuppressWarnings constructor() {
+
+}

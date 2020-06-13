@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/8/26.
@@ -9,10 +9,10 @@ package com.qiyei.kotlin
 
 fun main(args: Array<String>) {
 
-    println(sum0(10,85))
-    println(sum(10,8))
-    println(sum2(4,8,5))
-    println(sum3(5,6,9))
+    println(sum0(10, 85))
+    println(sum(10, 8))
+    println(sum2(4, 8, 5))
+    println(sum3(5, 6, 9))
 }
 
 /**

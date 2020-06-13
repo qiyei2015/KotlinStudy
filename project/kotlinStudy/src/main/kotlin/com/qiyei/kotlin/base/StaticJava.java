@@ -1,4 +1,6 @@
-package com.qiyei.kotlin;
+package com.qiyei.kotlin.base;
+
+import com.qiyei.kotlin.Latitude;
 
 /**
  * @author Created by qiyei2015 on 2018/9/3.

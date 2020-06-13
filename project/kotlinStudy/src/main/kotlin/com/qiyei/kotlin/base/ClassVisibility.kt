@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/9/1.
@@ -14,14 +14,14 @@ class Flower
 
 
 class Countyard{
-    private var house:House = House()
+    private var house: House = House()
 
-    private var flower:Flower = Flower()
+    private var flower: Flower = Flower()
 
 }
 
 open class ForbiddenCity{
-    var houses = arrayOf(House(),House())
+    var houses = arrayOf(House(), House())
 
     protected var flowers:Array<Flower> = arrayOf(Flower(), Flower())
 
@@ -37,7 +37,7 @@ class SubForbiddenCity: ForbiddenCity() {
 
 fun main(args: Array<String>) {
 
-    var countyard:Countyard = Countyard()
+    var countyard: Countyard = Countyard()
     var fc = ForbiddenCity()
 //    println(countyard.house)
     fc.houses.forEach {

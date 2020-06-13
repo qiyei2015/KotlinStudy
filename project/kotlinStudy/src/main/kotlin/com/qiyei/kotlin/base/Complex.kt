@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/8/27.
@@ -12,8 +12,8 @@ class Complex(var real:Double,var imaginary:Double){
     /**
      * 重载运算符
      */
-    operator fun plus(other:Complex):Complex{
-        return Complex(real+other.real,imaginary + other.imaginary)
+    operator fun plus(other: Complex): Complex {
+        return Complex(real + other.real, imaginary + other.imaginary)
     }
 
     override fun toString(): String {
@@ -24,8 +24,8 @@ class Complex(var real:Double,var imaginary:Double){
 
 fun main(args: Array<String>) {
 
-    var a1 = Complex(10.0,8.0)
-    var a2 = Complex(4.8,3.6)
+    var a1 = Complex(10.0, 8.0)
+    var a2 = Complex(4.8, 3.6)
 
     println(a1+a2)
 

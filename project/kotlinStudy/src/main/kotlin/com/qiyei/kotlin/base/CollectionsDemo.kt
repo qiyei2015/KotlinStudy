@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/10/21.
@@ -10,10 +10,10 @@ package com.qiyei.kotlin
 
 fun main(args: Array<String>) {
 
-    val list = arrayListOf<User>(User(1,"张三",14,"男"),User(2,"李四",16,"女"),
-            User(3,"王五",65,"男"),User(4,"赵六",24,"男")
-            ,User(5,"向七",89,"女"),User(6,"王八",6,"女")
-            ,User(7,"韩九",27,"男"),User(8,"陈10",35,"女"))
+    val list = arrayListOf<User>(User(1, "张三", 14, "男"), User(2, "李四", 16, "女"),
+            User(3, "王五", 65, "男"), User(4, "赵六", 24, "男")
+            , User(5, "向七", 89, "女"), User(6, "王八", 6, "女")
+            , User(7, "韩九", 27, "男"), User(8, "陈10", 35, "女"))
 
     //测试filter
     val filterList = list.filter { it.age > 30 }
@@ -44,9 +44,9 @@ fun main(args: Array<String>) {
     println(groupBy)
 
     var citys = arrayListOf<City>()
-    citys.add(City("CD", arrayListOf(User(1,"张三",14,"男"),User(2,"李四",16,"女"),
-            User(3,"王五",65,"男"))))
-    citys.add(City("CD", arrayListOf(User(5,"向七",89,"女"),User(6,"王八",6,"女"))))
+    citys.add(City("CD", arrayListOf(User(1, "张三", 14, "男"), User(2, "李四", 16, "女"),
+            User(3, "王五", 65, "男"))))
+    citys.add(City("CD", arrayListOf(User(5, "向七", 89, "女"), User(6, "王八", 6, "女"))))
     //测试flatMap
     val flatmap = citys.flatMap {
         it.people

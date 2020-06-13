@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/8/31.
@@ -22,7 +22,7 @@ interface B{
 /**
  * D1 复写了j
  */
-class D1(override var j:Int):A,B{
+class D1(override var j:Int): A, B {
     override fun a() {
         println("D1 a $j")
     }
@@ -37,7 +37,7 @@ class D1(override var j:Int):A,B{
 /**
  * D2也复写了j
  */
-class D2:A,B{
+class D2: A, B {
     override var j: Int = 2
         get() = field
         set(value) {

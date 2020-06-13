@@ -1,4 +1,4 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
 
 /**
  * @author Created by qiyei2015 on 2018/9/4.
@@ -31,7 +31,7 @@ interface OnClickListener{
 }
 
 class View{
-    var listner:OnClickListener? = null
+    var listner: OnClickListener? = null
 }
 
 
@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
 
     var view = View()
     //匿名内部类 object 实现了接口
-    view.listner = object :OnClickListener{
+    view.listner = object : OnClickListener {
         override fun click() {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }

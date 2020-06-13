@@ -1,4 +1,6 @@
-package com.qiyei.kotlin
+package com.qiyei.kotlin.base
+
+import com.qiyei.kotlin.base.User
 
 /**
  * @author Created by qiyei2015 on 2018/10/4.
@@ -11,12 +13,12 @@ fun main(args: Array<String>) {
 
     run{ println(45)}
 
-    val people = listOf(User(1,"张三",14,"男"),User(2,"李四",16,"女"))
+    val people = listOf(User(1, "张三", 14, "男"), User(2, "李四", 16, "女"))
     println("年纪最大:" + people.maxBy { it.age })
 
-    println("年纪最大:" + people.maxBy ({user:User -> user.age }))
-    println("年纪最大:" + people.maxBy(){user:User -> user.age })
-    println("年纪最大:" + people.maxBy{user:User -> user.age })
+    println("年纪最大:" + people.maxBy ({user: User -> user.age }))
+    println("年纪最大:" + people.maxBy(){user: User -> user.age })
+    println("年纪最大:" + people.maxBy{user: User -> user.age })
 
     println("年纪最大:" + people.maxBy{user -> user.age })
 
