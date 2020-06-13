@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +17,28 @@ public class ChineseTest {
 
     private static final String fileName5 = "3个字的常用名字.txt";
 
+    private static final String fileName6 = "韩如Xxx的常用名字.txt";
+    private static final String fileName7 = "韩锦Xxx的常用名字.txt";
+
     private static List<String> commonlyUsedChinese = new ArrayList<>();
 
+    static List<String> names1 = new ArrayList<>();
 
     public static void main(String[] args) throws Exception{
         commonlyUsedChinese = getChineseCharList();
         generateNames();
         System.out.println("名字已经生成完成！！！");
+        chooseNames();
+    }
+
+    private static void chooseNames(){
+        List<String> chooseNames = new ArrayList<>();
+        for (int i = 0 ;i < names1.size() ;i++){
+            if (i % 910609 == 0){
+                chooseNames.add(names1.get(i));
+            }
+        }
+        System.out.println(chooseNames);
     }
 
     private static void generateChineseName(){
@@ -140,26 +153,72 @@ public class ChineseTest {
             }
             FileWriter fw2 = new FileWriter(fileName5);
 
+            File file3 = new File(fileName6);
+            file3.delete();
+            if (!file3.exists()) {
+                file3.createNewFile();
+            }
+            FileWriter fw3 = new FileWriter(fileName6);
+
+            File file4 = new File(fileName7);
+            file4.delete();
+            if (!file4.exists()) {
+                file4.createNewFile();
+            }
+            FileWriter fw4 = new FileWriter(fileName7);
+
             String pre = "韩";
             String name;
+            int separator_count = 25;
             for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
                 name = pre + commonlyUsedChinese.get(i) + "   ";
                 k++;
-                if (k % 100 == 0){
+                if (k % separator_count == 0){
                     name = name + "\n";
                 }
+
                 fw.write(name);
             }
+            separator_count = 20;
 
             for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
                 String str1 = commonlyUsedChinese.get(i);
                 for (int j = 0;j < commonlyUsedChinese.size() ;j++){
                     name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
                     k++;
-                    if (k % 100 == 0){
+                    if (k % separator_count == 0){
                         name = name + "\n";
                     }
+                    names1.add(name);
                     fw2.write(name);
+                }
+            }
+
+            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+                String str1 = commonlyUsedChinese.get(i);
+                if (str1.equals("如")){
+                    for (int j = 0;j < commonlyUsedChinese.size() ;j++){
+                        name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
+                        k++;
+                        if (k % separator_count == 0){
+                            name = name + "\n";
+                        }
+                        fw3.write(name);
+                    }
+                }
+            }
+
+            for (int i = 0 ;i < commonlyUsedChinese.size() ;i++){
+                String str1 = commonlyUsedChinese.get(i);
+                if (str1.equals("锦")){
+                    for (int j = 0;j < commonlyUsedChinese.size() ;j++){
+                        name = pre + str1 + commonlyUsedChinese.get(j) + "   ";
+                        k++;
+                        if (k % separator_count == 0){
+                            name = name + "\n";
+                        }
+                        fw4.write(name);
+                    }
                 }
             }
 
@@ -169,6 +228,8 @@ public class ChineseTest {
             //fw.flush();
             //fw.close();
         }
+
+
     }
 
     /**
